@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [PERM_CONTACT](-p-e-r-m_-c-o-n-t-a-c-t.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains true/false depending if the permission CONTACTS is requested by the study

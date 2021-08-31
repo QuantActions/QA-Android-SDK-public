@@ -4,3 +4,14 @@
 
 [androidJvm]\
 open fun <[T](validate-token.md) : [QARunnable](../-q-a-runnable/index.md)?> [validateToken](validate-token.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), authCode: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)()runnable: T)
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| context | Android application context |
+| authCode | Authentication token to be tested |
+| runnable | to handle responses [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |
+| <T> | any class that implements [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |

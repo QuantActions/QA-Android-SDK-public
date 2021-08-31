@@ -4,3 +4,5 @@
 
 [androidJvm]\
 open fun [getVerboseLevel](get-verbose-level.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
+Get the current QA logging level

@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [STUDY_ID](-s-t-u-d-y_-i-d.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains the study ID for which the subscription has been requested

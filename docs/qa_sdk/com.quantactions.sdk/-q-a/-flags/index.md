@@ -5,6 +5,8 @@
 [androidJvm]\
 class [Flags](index.md)
 
+This internal class holds the string that identify the flags for requesting the number of taps in a certain period with [getLastTaps](../get-last-taps.md)
+
 ## Properties
 
 | Name | Summary |

@@ -5,7 +5,9 @@
 [androidJvm]\
 class [QARunnableExample](index.md)(**context**: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), **alertDialog**: [AlertDialog](https://developer.android.com/reference/kotlin/androidx/appcompat/app/AlertDialog.html)?) : [QARunnable](../-q-a-runnable/index.md)
 
-Implementation example of abstract interface
+Implementation example of abstract interface [QARunnable](../-q-a-runnable/index.md).
+
+This QARunnable example shows how to add an alert dialog to the runnable, in this way the user can be notified that the app is performing a task in the background, when done the dialog is dismissed and a message appears in the SnackBar.
 
 ## See also
 
@@ -13,7 +15,7 @@ androidJvm
 
 | | |
 |---|---|
-| [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) | This QARunnable example shows how to add an alert dialog to the runnable, in this way the user can be notified that the app is performing a task in the background, when done the dialog is dismissed and a message appears in the SnackBar. Created by Enea Ceolini on 23/08/17. Contact: enea.ceolini@quantactions.com |
+| [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) | Created by Enea Ceolini on 23/08/17. Contact: enea.ceolini@quantactions.com |
 
 ## Constructors
 

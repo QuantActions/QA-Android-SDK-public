@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [QA_PERMISSION_REQUEST_GPS](-q-a_-p-e-r-m-i-s-s-i-o-n_-r-e-q-u-e-s-t_-g-p-s.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
+Flag for the request of the GPS permission.

@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [CAN_WITHDRAW](-c-a-n_-w-i-t-h-d-r-a-w.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains true/false depending if the user can withdraw from the study

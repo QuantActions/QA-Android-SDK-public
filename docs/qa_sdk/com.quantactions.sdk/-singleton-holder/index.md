@@ -17,9 +17,3 @@ open class [SingletonHolder](index.md)<out [T](index.md), in [A](index.md)>(**cr
 |---|---|
 | [creator](creator.md) | [androidJvm]<br>var [creator](creator.md): ([A](index.md)) -> [T](index.md)? |
 | [instance](instance.md) | [androidJvm]<br>@[Volatile](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-volatile/index.html)()<br>var [instance](instance.md): [T](index.md)? = null |
-
-## Inheritors
-
-| Name |
-|---|
-| [ManagePref2](../-manage-pref2/-companion/index.md) |

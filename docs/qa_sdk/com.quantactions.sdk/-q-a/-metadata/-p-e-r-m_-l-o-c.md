@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [PERM_LOC](-p-e-r-m_-l-o-c.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains true/false depending if the permission LOCATION is requested by the study

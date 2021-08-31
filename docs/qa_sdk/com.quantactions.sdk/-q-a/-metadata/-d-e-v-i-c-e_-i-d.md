@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [DEVICE_ID](-d-e-v-i-c-e_-i-d.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains the device ID

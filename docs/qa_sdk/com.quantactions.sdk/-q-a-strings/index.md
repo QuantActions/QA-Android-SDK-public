@@ -5,7 +5,9 @@
 [androidJvm]\
 interface [QAStrings](index.md)
 
-const valious codes for QA API. Some functions of the API return these flags for you information. Created By Enea Ceolini 2018 Contact: enea.ceolini@quantactions.com
+Various codes for QA SDK. Some functions of the SDK return these flags for you information.
+
+Created By Enea Ceolini 11/2018 Contact: enea.ceolini@quantactions.com
 
 ## Types
 

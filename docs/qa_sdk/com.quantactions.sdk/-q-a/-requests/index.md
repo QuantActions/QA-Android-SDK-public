@@ -5,6 +5,8 @@
 [androidJvm]\
 class [Requests](index.md)
 
+This internal class holds the string that identify the requests made from the SDK to the backend and the corresponding items in the metadata of the response.
+
 ## Properties
 
 | Name | Summary |

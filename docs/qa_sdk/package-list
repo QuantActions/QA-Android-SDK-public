@@ -1,43 +1,11 @@
 $dokka.format:gfm-v1
 $dokka.linkExtension:md
+$dokka.location:com.quantactions.sdk.exceptions////PointingToDeclaration/qa_sdk/com.quantactions.sdk.exceptions/index.md
+$dokka.location:com.quantactions.sdk.exceptions/NoStudySubscriptionFound///PointingToDeclaration/qa_sdk/com.quantactions.sdk.exceptions/-no-study-subscription-found/index.md
+$dokka.location:com.quantactions.sdk.exceptions/NoStudySubscriptionFound/NoStudySubscriptionFound/#kotlin.String/PointingToDeclaration/qa_sdk/com.quantactions.sdk.exceptions/-no-study-subscription-found/-no-study-subscription-found.md
+$dokka.location:com.quantactions.sdk.exceptions/SDKNotInitialisedException///PointingToDeclaration/qa_sdk/com.quantactions.sdk.exceptions/-s-d-k-not-initialised-exception/index.md
+$dokka.location:com.quantactions.sdk.exceptions/SDKNotInitialisedException/SDKNotInitialisedException/#kotlin.String/PointingToDeclaration/qa_sdk/com.quantactions.sdk.exceptions/-s-d-k-not-initialised-exception/-s-d-k-not-initialised-exception.md
 $dokka.location:com.quantactions.sdk////PointingToDeclaration/qa_sdk/com.quantactions.sdk/index.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/index.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/APP_ID_NEEDED/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-a-p-p_-i-d_-n-e-e-d-e-d.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/CENTER_PENDING/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-c-e-n-t-e-r_-p-e-n-d-i-n-g.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/CONTACTS_NEEDED/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-c-o-n-t-a-c-t-s_-n-e-e-d-e-d.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/DEBUG_MODE/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-d-e-b-u-g_-m-o-d-e.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/DRAW_NEEDED/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-d-r-a-w_-n-e-e-d-e-d.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/GPS_RESOLUTION/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-g-p-s_-r-e-s-o-l-u-t-i-o-n.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/LOCATION_NEEDED/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-l-o-c-a-t-i-o-n_-n-e-e-d-e-d.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/ONBOARDING_FINISHED/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-o-n-b-o-a-r-d-i-n-g_-f-i-n-i-s-h-e-d.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/PENDING_FB/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-p-e-n-d-i-n-g_-f-b.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/PENDING_SIGN_UP/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-p-e-n-d-i-n-g_-s-i-g-n_-u-p.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/SAVED_APP_COUNT/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-s-a-v-e-d_-a-p-p_-c-o-u-n-t.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/SAVED_CHECK_IN_STATUS/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-s-a-v-e-d_-c-h-e-c-k_-i-n_-s-t-a-t-u-s.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/SAVED_DATE/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-s-a-v-e-d_-d-a-t-e.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/SAVED_PERM/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-s-a-v-e-d_-p-e-r-m.md
-$dokka.location:com.quantactions.sdk/ManagePref2.Companion/SAVED_VERBOSE/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/-companion/-s-a-v-e-d_-v-e-r-b-o-s-e.md
-$dokka.location:com.quantactions.sdk/ManagePref2///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/index.md
-$dokka.location:com.quantactions.sdk/ManagePref2/date/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/date.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getAppCount/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-app-count.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getCenterPending/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-center-pending.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getCheckIn/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-check-in.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getDebugMode/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-debug-mode.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getGPSResolution/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-g-p-s-resolution.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getHasFinishedOnboarding/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-has-finished-onboarding.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getPendingFirebaseToken/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-pending-firebase-token.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getPermissionsStatus/#android.content.Context/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-permissions-status.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getSavedAppsCount/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-saved-apps-count.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getSavedDate/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-saved-date.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getSavedPermissions/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-saved-permissions.md
-$dokka.location:com.quantactions.sdk/ManagePref2/getVerbose/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/get-verbose.md
-$dokka.location:com.quantactions.sdk/ManagePref2/setDebugMode/#kotlin.Boolean/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/set-debug-mode.md
-$dokka.location:com.quantactions.sdk/ManagePref2/setGPSResolution/#kotlin.Int/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/set-g-p-s-resolution.md
-$dokka.location:com.quantactions.sdk/ManagePref2/setHasFinishedOnboarding/#kotlin.Boolean/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/set-has-finished-onboarding.md
-$dokka.location:com.quantactions.sdk/ManagePref2/setPendingFirebaseToken/#kotlin.Boolean/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/set-pending-firebase-token.md
-$dokka.location:com.quantactions.sdk/ManagePref2/setVerbose/#kotlin.Int/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-manage-pref2/set-verbose.md
-$dokka.location:com.quantactions.sdk/NoStudySubscriptionFound///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-no-study-subscription-found/index.md
-$dokka.location:com.quantactions.sdk/NoStudySubscriptionFound/NoStudySubscriptionFound/#kotlin.String/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-no-study-subscription-found/-no-study-subscription-found.md
 $dokka.location:com.quantactions.sdk/QA.Flags///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a/-flags/index.md
 $dokka.location:com.quantactions.sdk/QA.Flags/QA_FLAG_DAY/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a/-flags/-q-a_-f-l-a-g_-d-a-y.md
 $dokka.location:com.quantactions.sdk/QA.Flags/QA_FLAG_MONTH/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a/-flags/-q-a_-f-l-a-g_-m-o-n-t-h.md
@@ -223,8 +191,6 @@ $dokka.location:com.quantactions.sdk/RelaunchWorker///PointingToDeclaration/qa_
 $dokka.location:com.quantactions.sdk/RelaunchWorker/RelaunchWorker/#android.content.Context#androidx.work.WorkerParameters/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-relaunch-worker/-relaunch-worker.md
 $dokka.location:com.quantactions.sdk/RelaunchWorker/doWork/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-relaunch-worker/do-work.md
 $dokka.location:com.quantactions.sdk/RelaunchWorker/getApplicationName/#android.content.Context/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-relaunch-worker/get-application-name.md
-$dokka.location:com.quantactions.sdk/SDKNotInitialisedException///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-s-d-k-not-initialised-exception/index.md
-$dokka.location:com.quantactions.sdk/SDKNotInitialisedException/SDKNotInitialisedException/#kotlin.String/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-s-d-k-not-initialised-exception/-s-d-k-not-initialised-exception.md
 $dokka.location:com.quantactions.sdk/ServiceStarter///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-service-starter/index.md
 $dokka.location:com.quantactions.sdk/ServiceStarter/ServiceStarter/#android.content.Context#androidx.work.WorkerParameters/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-service-starter/-service-starter.md
 $dokka.location:com.quantactions.sdk/ServiceStarter/doWork/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-service-starter/do-work.md
@@ -241,4 +207,5 @@ $dokka.location:com.quantactions.sdk/SyncWorker///PointingToDeclaration/qa_sdk/
 $dokka.location:com.quantactions.sdk/SyncWorker/SyncWorker/#android.content.Context#androidx.work.WorkerParameters/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-sync-worker/-sync-worker.md
 $dokka.location:com.quantactions.sdk/SyncWorker/doWork/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-sync-worker/do-work.md
 com.quantactions.sdk
+com.quantactions.sdk.exceptions
 

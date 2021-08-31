@@ -5,6 +5,8 @@
 [androidJvm]\
 class [Permissions](index.md)
 
+This internal class holds the string that identify requests for permissions.
+
 ## Properties
 
 | Name | Summary |

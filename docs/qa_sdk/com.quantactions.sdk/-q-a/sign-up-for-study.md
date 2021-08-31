@@ -5,23 +5,21 @@
 [androidJvm]\
 open fun <[T](sign-up-for-study.md) : [QARunnable](../-q-a-runnable/index.md)?> [signUpForStudy](sign-up-for-study.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), participationId: [String](https://developer.android.com/reference/kotlin/java/lang/String.html), runnable: T)
 
-Use this function to subscribe the device to a certain study. The runnable metadata is filled with a [com.quantactions.sdk.QAJSON](../-q-a-j-s-o-n/index.md) with the following fields: 
+Use this function to subscribe the device to a certain study. The runnable metadata is filled with a [QAJSON](../-q-a-j-s-o-n/index.md) with the following fields: 
 
-COLUMN_STUDY_ID
+[STUDY_ID](-metadata/-s-t-u-d-y_-i-d.md)
 
-COLUMN_STUDY_TITLE
+[STUDY_TITLE](-metadata/-s-t-u-d-y_-t-i-t-l-e.md)
 
-COLUMN_WITHDRAW
+[CAN_WITHDRAW](-metadata/-c-a-n_-w-i-t-h-d-r-a-w.md)
 
-COLUMN_PRIVACY
+[PRIVACY_POLICY](-metadata/-p-r-i-v-a-c-y_-p-o-l-i-c-y.md)
 
-COLUMN_SYNC_SCREEN_OFF
+[PERM_APP_ID](-metadata/-p-e-r-m_-a-p-p_-i-d.md)
 
-COLUMN_PERM_APP_ID
+[PERM_DRAW](-metadata/-p-e-r-m_-d-r-a-w.md)
 
-COLUMN_PERM_DRAW
-
-COLUMN_PERM_LOC
+[PERM_LOC](-metadata/-p-e-r-m_-l-o-c.md)
 
 ## Parameters
 
@@ -30,6 +28,6 @@ androidJvm
 | | |
 |---|---|
 | context | Android application context |
-| participationId | to the study |
-| runnable | to handle responses [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |
-| <T> | any class that implements [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |
+| participationId | to the study, or the studyId if it's a generic subscription. |
+| runnable | to handle responses [QARunnable](../-q-a-runnable/index.md) |
+| <T> | any class that implements [QARunnable](../-q-a-runnable/index.md) |

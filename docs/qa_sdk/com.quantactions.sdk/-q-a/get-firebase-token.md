@@ -4,3 +4,9 @@
 
 [androidJvm]\
 open fun [getFirebaseToken](get-firebase-token.md)(): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Get the current Firebase token.
+
+#### Return
+
+String corresponding to the Firebase token.

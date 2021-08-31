@@ -5,7 +5,7 @@
 [androidJvm]\
 abstract class [QARunnable](index.md) : [Runnable](https://developer.android.com/reference/kotlin/java/lang/Runnable.html)
 
-This abstract class extends Runnable. Because all of the work done by the QA API is in the background and most importantly asynchronous, it is important to offer a way for the main thread to be updated as well as offering a way to collect the result (positive or negative) of a certain call. With any QA request you can submit an instance of a class that implements this interface so that the desired action is triggered in case of success or failure of the call. In order to use this runnable you need to implement this abstract class. this runnable is used for handling asynchronous response of the server. Note that some functions in the API will return immediate values on the success or failure of the submission of the call, the result of the call can only be handled by this runnable. Take a look at
+This abstract class extends Runnable. Because all of the work done by the QA API is in the background and most importantly asynchronous, it is important to offer a way for the main thread to be updated as well as offering a way to collect the result (positive or negative) of a certain call. With any QA request you can submit an instance of a class that implements this interface so that the desired action is triggered in case of success or failure of the call. In order to use this runnable you need to implement this abstract class. this runnable is used for handling asynchronous response of the server. Note that some functions in the API will return immediate values on the success or failure of the submission of the call, the result of the call can only be handled by this runnable. Take a look at [QARunnableExample](../-q-a-runnable-example/index.md) and [SnackRun](../-snack-run/index.md) for some examples of what you can achieve with this Runnable.
 
 ## See also
 
@@ -13,8 +13,8 @@ androidJvm
 
 | | |
 |---|---|
-| [com.quantactions.sdk.QARunnableExample](../-q-a-runnable-example/index.md) | or |
-| [com.quantactions.sdk.SnackRun](../-snack-run/index.md) | for some examples of what you can achieve with this Runnable. Created by Enea Ceolini on 23/08/17. Contact: enea.ceolini@quantactions.com |
+| [com.quantactions.sdk.QARunnableExample](../-q-a-runnable-example/index.md) |  |
+| [com.quantactions.sdk.SnackRun](../-snack-run/index.md) | Created by Enea Ceolini on 23/08/17. Contact: enea.ceolini@quantactions.com |
 
 ## Constructors
 

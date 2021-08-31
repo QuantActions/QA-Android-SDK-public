@@ -4,3 +4,14 @@
 
 [androidJvm]\
 open fun [log](log.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), text: [String](https://developer.android.com/reference/kotlin/java/lang/String.html))
+
+WIP
+
+## Parameters
+
+androidJvm
+
+| | |
+|---|---|
+| context |  |
+| text |  |

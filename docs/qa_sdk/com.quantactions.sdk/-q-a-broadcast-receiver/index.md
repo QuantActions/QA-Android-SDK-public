@@ -5,7 +5,7 @@
 [androidJvm]\
 open class [QABroadcastReceiver](index.md) : [BroadcastReceiver](https://developer.android.com/reference/kotlin/android/content/BroadcastReceiver.html)
 
-Created by enea on 13/08/17. Contact: enea.ceolini@gmail.com
+General broadcast receiver for SDK actions. Created by Enea Ceolini on 11/16. Contact: enea.ceolini@quantactions.com
 
 ## Functions
 

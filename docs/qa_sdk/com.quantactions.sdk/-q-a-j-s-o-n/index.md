@@ -5,7 +5,7 @@
 [androidJvm]\
 class [QAJSON](index.md) : [HashMap](https://developer.android.com/reference/kotlin/java/util/HashMap.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?> 
 
-Simple Dictionary that can be easily dumped into a JSON string
+Simple Dictionary that can be easily dumped into a JSON string Created By Enea Ceolini 11/2018 Contact: enea.ceolini@quantactions.com
 
 ## Constructors
 

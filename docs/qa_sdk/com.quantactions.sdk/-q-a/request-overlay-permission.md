@@ -9,7 +9,15 @@ This function checks if the overlay permission has been granted, if not open the
 
 #### Return
 
-status of the request * @see com.quantactions.sdk.QAStrings
+status of the request
+
+## See also
+
+androidJvm
+
+| | |
+|---|---|
+| [com.quantactions.sdk.QAStrings](../-q-a-strings/index.md) |  |
 
 ## Parameters
 

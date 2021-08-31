@@ -21,5 +21,5 @@ androidJvm
 |---|---|
 | context | Android application context |
 | studyId | study participation Id |
-| runnable | to handle responses [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |
-| <T> | any class that implements [com.quantactions.sdk.QARunnable](../-q-a-runnable/index.md) |
+| runnable | to handle responses [QARunnable](../-q-a-runnable/index.md) |
+| <T> | any class that implements [QARunnable](../-q-a-runnable/index.md) |

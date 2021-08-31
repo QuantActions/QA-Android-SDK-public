@@ -4,3 +4,5 @@
 
 [androidJvm]\
 val [PERM_DRAW](-p-e-r-m_-d-r-a-w.md): [String](https://developer.android.com/reference/kotlin/java/lang/String.html)
+
+Metadata contains true/false depending if the permission DRAW OVER is requested by the study

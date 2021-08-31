@@ -5,6 +5,14 @@
 [androidJvm]\
 class [SDKNotInitialisedException](index.md)(**message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Exception](https://developer.android.com/reference/kotlin/java/lang/Exception.html)
 
+Exception launched when SDK functionalities are called before the SDK was initialized.
+
+## Constructors
+
+| | |
+|---|---|
+| [SDKNotInitialisedException](-s-d-k-not-initialised-exception.md) | [androidJvm]<br>fun [SDKNotInitialisedException](-s-d-k-not-initialised-exception.md)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = "SDK Not Initialised! In order to communicate with the server call" +         "\n" +         "QA qa = QA.getInstance();\n" +         "qa.init(context, your_authorization_key, null);\n" +         "\n") |
+
 ## Functions
 
 | Name | Summary |
