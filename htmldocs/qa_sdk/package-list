@@ -169,9 +169,7 @@ $dokka.location:com.quantactions.sdk/QAStudy/studyId/#/PointingToDeclaration/qa
 $dokka.location:com.quantactions.sdk/QAStudy/studyTitle/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-study/study-title.html
 $dokka.location:com.quantactions.sdk/QAStudy/syncOnScreenOff/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-study/sync-on-screen-off.html
 $dokka.location:com.quantactions.sdk/QATaps///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/index.html
-$dokka.location:com.quantactions.sdk/QATaps/QATaps/#kotlin.IntArray?#kotlin.Int#kotlin.FloatArray?/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/-q-a-taps.html
-$dokka.location:com.quantactions.sdk/QATaps/speed/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/speed.html
-$dokka.location:com.quantactions.sdk/QATaps/taps/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/taps.html
+$dokka.location:com.quantactions.sdk/QATaps/QATaps/#kotlin.Int/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/-q-a-taps.html
 $dokka.location:com.quantactions.sdk/QATaps/total_taps/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-q-a-taps/total_taps.html
 $dokka.location:com.quantactions.sdk/ReadingsService.LocalBinder///PointingToDeclaration/qa_sdk/com.quantactions.sdk/-readings-service/-local-binder/index.html
 $dokka.location:com.quantactions.sdk/ReadingsService.LocalBinder/getService/#/PointingToDeclaration/qa_sdk/com.quantactions.sdk/-readings-service/-local-binder/get-service.html

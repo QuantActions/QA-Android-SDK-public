@@ -3,4 +3,4 @@
 # QATaps
 
 [androidJvm]\
-fun [QATaps](-q-a-taps.md)(taps: [IntArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html)?, total_taps: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), speed: [FloatArray](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)?)
+fun [QATaps](-q-a-taps.md)(total_taps: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
