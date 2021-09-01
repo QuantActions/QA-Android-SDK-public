@@ -13,9 +13,9 @@ This is an issue-only public repository for the distribution of the documentatio
 
 ---
 
-## Android Studio Setup
+## 1. Android Studio Setup
 
-The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is private and can only be accessed prior a request, please write you request (containing your github username) to [development@quantactions.com](emailto:development@quantactions.com).
+The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is private and can only be accessed prior a request, please write you request (containing your github username) to [development@quantactions.com](mailto:development@quantactions.com).
 
 1. Ensure that you have selected a minimum Android SDK of **16** for your project by checking that the app-level `build.gradle` file contains this code
 
@@ -58,7 +58,7 @@ and re-sync the project. Remember to check the latest SDK version in case you ar
 
 ----
 
-## Adding QA functionality to an app
+## 2. Adding QA functionality to an app
 
 The whole QA functionality can be accessed everywhere in the code by the singleton `QA` that can be instantiate like this.
 
@@ -116,14 +116,31 @@ While the above setup is good for debugging, we suggest to use a slightly differ
 
 ---
 
+## 3. Signup to a study
+To track a device it is **necessary** to subscribe the device to a cohort (also called study). Each device can be subscribed in two ways. For a study with a known number of devices to track, QuantActions provides a set of codes of the form `138e...28eb` that have to be distributed. The way the code is entered into the app is the choice of the developer. In our TapCounter R&D app we use both a copy&paste method and a QR code scanning method, once the code as been acquired the device can the registered using the SDK
+
+``` Java
+qa.signUpForStudy(context, participationId, null));
+```   
+
+where `participationId` is the string corresponding to the participation ID and the `null` can be substituted by any class that implements the QARunnable interface (e.g. SnackRun).
+
+For cohorts (or studies) where the number of participants is unknown the SDK can be used to register the device by simply using the `studyId` provided by QA.
+
+``` Java
+qa.signUpForStudy(context, studyId, null));
+```   
+
+---
+
 ## Firebase
 
 For the best experience with the SDK we strongly recommend to add to your app [Firebase Messaging, Crashlytics and Analytics](https://firebase.google.com/), this will allow QA service to also communicate with the app to check its status and more.
 
 ---
 
-QA Runnables
-------------
+## QA Runnables
+
 In almost all the public functions of the singleton QA, you will find that they accept an object that should implements the basic QARunnable interface.
 Since most of what QA does is asynchronous, this allows developers to infuse delayed behaviour when a task succeeds or when a task fails (for example if connection is not available).
 The QA SDK offers an example of basic objects that implements the QA runnable interface for example the QARunnableExample and the SnackRun.
@@ -144,22 +161,7 @@ The QA Runnables receive also some metadata with more information regarding the 
 
 ------------------
 
-## Signup to a study
-To track a device it is **necessary** to subscribe the device to a cohort (also called study). Each device can be subscribed in two ways. For a study with a known number of devices to track, QuantActions provides a set of codes of the form `138e...28eb` that have to be distributed. The way the code is entered into the app is the choice of the developer. In our TapCounter R&D app we use both a copy&paste method and a QR code scanning method, once the code as been acquired the device can the registered using the SDK
 
-``` Java
-qa.signUpForStudy(context, participationId, null));
-```   
-
-where `participationId` is the string corresponding to the participation ID and the `null` can be substituted by any class that implements the QARunnable interface (e.g. SnackRun).
-
-For cohorts (or studies) where the number of participants is unknown the SDK can be used to register the device by simply using the `studyId` provided by QA.
-
-``` Java
-qa.signUpForStudy(context, studyId, null));
-```   
-
----
 ## The notification icon
 Because QA SDK is always active in the background, Android API O and above require a notification to always be present to inform the user, by default the notification uses [this](https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aequalizer%3A) icon. To override it and use your own icon you can simply create a drawable named `ic_equalizer_black_24dp` and place it in your `res/drawable` folder and this will override the drawable of the SDK.
 
@@ -168,7 +170,7 @@ Moreover the SDK notification uses a separate notification channel called `QA Se
 
 ---
 
-## TL:DR
+# TL:DR
 Minimal example
 
 - Get a `QA_AUTH_KEY` from [QuantActions](mailto:development@quantactions.com)
