@@ -49,7 +49,7 @@ allprojects{
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
 ```Java
-implementation 'com.github.QuantActions:QA-Android-SDK:0.4.0'
+implementation 'com.github.QuantActions:QA-Android-SDK:0.4.1-rc2'
 ```
 
 and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -204,7 +204,7 @@ allprojects {
 `build.gradle` (app level)
 
 ```Java
-implementation 'com.github.QuantActions:QA-Android-SDK:0.4.0'
+implementation 'com.github.QuantActions:QA-Android-SDK:0.4.1-rc2'
 
 ```
 
