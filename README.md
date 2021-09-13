@@ -114,9 +114,26 @@ While the above setup is good for debugging, we suggest to use a slightly differ
  qa.init(context, BuildConfig.QA_AUTH_KEY, null);
  ```
 
----
 
-## 3. Signup to a study
+------------------------
+
+## 3. Request the permissions
+
+For the SDK to work properly, the app that uses it needs to request 2 permissions:
+- OVERLAY PERMISSION: `Settings.ACTION_MANAGE_OVERLAY_PERMISSION`
+- USAGE ACCESS: `Settings.ACTION_USAGE_ACCESS_SETTINGS`
+
+To prompt the user to enable these permissions you can use the methods
+
+```Java
+qa.requestOverlayPermission(context) // opens overlay settings page
+
+qa.requestUsagePermission(context) // opens usage settings page
+```
+
+-----
+
+## 4. Signup to a study
 To track a device it is **necessary** to subscribe the device to a cohort (also called study). Each device can be subscribed in two ways. For a study with a known number of devices to track, QuantActions provides a set of codes of the form `138e...28eb` that have to be distributed. The way the code is entered into the app is the choice of the developer. In our TapCounter R&D app we use both a copy&paste method and a QR code scanning method, once the code as been acquired the device can the registered using the SDK
 
 ``` Java
@@ -168,7 +185,7 @@ Because QA SDK is always active in the background, Android API O and above requi
 Moreover the SDK notification uses a separate notification channel called `QA Service` and can be easily unselected from the OS notifications settings to avoid having it always present.  
 
 
----
+-------
 
 # TL:DR
 Minimal example
@@ -227,6 +244,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main)
         QA qa = QA.getInstance() // instantiate
         qa.init(MainActivity.this, QA_AUTH_KEY, null) // initialize SDK
+        qa.requestOverlayPermission(MainActivity.this) // opens overlay settings page
+        qa.requestUsagePermission(MainActivity.this) // opens usage settings page
         qa.signUpForStudy(MainActivity.this, QA_STUDY_ID null));  // register the device with the backend
         qa.syncData(MainActivity.this, null) // optional: sync the data
     }
