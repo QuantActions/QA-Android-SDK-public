@@ -5,7 +5,7 @@
 [androidJvm]\
 open fun [isInit](is-init.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-Checks whether or not the SDk is initialized.
+Checks whether or not the SDK is initialized.
 
 #### Return
 

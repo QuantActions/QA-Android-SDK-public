@@ -3,7 +3,9 @@
 # syncData
 
 [androidJvm]\
-open fun <[T](sync-data.md) : [QARunnable](../-q-a-runnable/index.md)?> [syncData](sync-data.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html), @[Nullable](https://developer.android.com/reference/kotlin/androidx/annotation/Nullable.html)()runnable: T)
+open fun [syncData](sync-data.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)): [UUID](https://developer.android.com/reference/kotlin/java/util/UUID.html)
+
+Utility function to sync all the local data with the server. IDUe to the complexity of the work, it spawns Worker and return its UUID. The status of the worker can be observed to check its status of SUCCESS/FAILURE.
 
 ## Parameters
 
@@ -12,5 +14,3 @@ androidJvm
 | | |
 |---|---|
 | context | Android application context |
-| runnable | to handle responses [QARunnable](../-q-a-runnable/index.md) |
-| <T> | any class that implements [QARunnable](../-q-a-runnable/index.md) |
