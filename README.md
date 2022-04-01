@@ -17,11 +17,11 @@ This is an issue-only public repository for the distribution of the documentatio
 
 The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is private and can only be accessed prior a request, please write you request (containing your github username) to [development@quantactions.com](mailto:development@quantactions.com).
 
-1. Ensure that you have selected a minimum Android SDK of **16** for your project by checking that the app-level `build.gradle` file contains this code
+1. Ensure that you have selected a minimum Android SDK of **21** for your project by checking that the app-level `build.gradle` file contains this code
 
-```Java
+``` Java
 defaultConfig {
-    minSdkVersion 16
+    minSdkVersion 21
 }
 ```
 
@@ -33,7 +33,7 @@ authToken=auth_token_from_jitpack
 
 and add the JitPack repo to the project-level `build.gradle`
 
-```Java
+``` Java
 ...
 allprojects{
   repositories {
@@ -48,8 +48,8 @@ allprojects{
 
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
-```Java
-implementation 'com.github.QuantActions:QA-Android-SDK:0.4.1-rc2'
+``` Java
+implementation 'com.github.QuantActions:QA-Android-SDK:0.5.0'
 ```
 
 and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -62,7 +62,7 @@ and re-sync the project. Remember to check the latest SDK version in case you ar
 
 The whole QA functionality can be accessed everywhere in the code by the singleton `QA` that can be instantiate like this.
 
-```Java
+``` Java
 import com.quantactions.sdk.QA;
 ...
 
@@ -79,15 +79,13 @@ Once in possession of the `auth_token`, the simplest thing to do is to create a 
 
 Once you have that, you can check that the `auth_token` is correct and everything works as it is supposed to by using the method `validateToken` in the following way.
 
-```Java
-qa.validateToken(context, getString(R.string.access_token), null);
+``` Java
+qa.validateToken(context, getString(R.string.access_token));
 ```
-
-The significance fo the last element, now set to `null` will be covered in a later chapter on QA Runnables
 
 Finally you can initialize the SDK
 
-```Java
+``` Java
 qa.init(context, getString(R.string.access_token), null);
 ```
 
@@ -95,12 +93,12 @@ While the above setup is good for debugging, we suggest to use a slightly differ
 
  For a better setting, add your `auth_token` to the app level `build.gradle`
 
- ```Java
+ ``` Java
  android {
     compileSdkVersion 31
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         ...
         buildConfigField("String", "QA_AUTH_KEY", "\"auth_token\"")
     }
@@ -110,7 +108,7 @@ While the above setup is good for debugging, we suggest to use a slightly differ
 
  then you can access it in the code, for example to initialize the SDK.
 
- ```Java
+ ``` Java
  qa.init(context, BuildConfig.QA_AUTH_KEY, null);
  ```
 
@@ -125,7 +123,7 @@ For the SDK to work properly, the app that uses it needs to request 2 permission
 
 To prompt the user to enable these permissions you can use the methods
 
-```Java
+``` Java
 qa.requestOverlayPermission(context) // opens overlay settings page
 
 qa.requestUsagePermission(context) // opens usage settings page
@@ -142,7 +140,7 @@ qa.signUpForStudy(context, participationId, null));
 
 where `participationId` is the string corresponding to the participation ID and the `null` can be substituted by any class that implements the QARunnable interface (e.g. SnackRun).
 
-For cohorts (or studies) where the number of participants is unknown the SDK can be used to register the device by simply using the `studyId` provided by QA.
+For cohorts (or studies) where the number of participants is unknown the SDK can be used to register the device by simply using the `studyId` provided by QA (this way needs special access so mae sure you are authorized by QuantActions to use this functionality).
 
 ``` Java
 qa.signUpForStudy(context, studyId, null));
@@ -153,28 +151,6 @@ qa.signUpForStudy(context, studyId, null));
 ## Firebase
 
 For the best experience with the SDK we strongly recommend to add to your app [Firebase Messaging, Crashlytics and Analytics](https://firebase.google.com/), this will allow QA service to also communicate with the app to check its status and more.
-
----
-
-## QA Runnables
-
-In almost all the public functions of the singleton QA, you will find that they accept an object that should implements the basic QARunnable interface.
-Since most of what QA does is asynchronous, this allows developers to infuse delayed behaviour when a task succeeds or when a task fails (for example if connection is not available).
-The QA SDK offers an example of basic objects that implements the QA runnable interface for example the QARunnableExample and the SnackRun.
-
-For example the SnackRun is instantiated with two strings `onSuccess` and `onFailure` and provides a simple SnackBar notification to the user with the result
-
-``` Kotlin
-override fun runPositive() {
-      (context as Activity).findViewById<View>(android.R.id.content).snack(onSuccess)
-}
-
-override fun runNegative() {
-    (context as Activity).findViewById<View>(android.R.id.content).snack(onFailure)
-}
-```
-
-The QA Runnables receive also some metadata with more information regarding the call (and error in case of failure) in an QAJSON object called `metadata`. See `QA.Metadata` for the object keys.
 
 ------------------
 
@@ -204,7 +180,7 @@ authToken=auth_token_from_jitpack
 
 `build.gradle` (project level)
 
-```Java
+``` Java
 ...
 allprojects {
     repositories {
@@ -220,15 +196,15 @@ allprojects {
 
 `build.gradle` (app level)
 
-```Java
-implementation 'com.github.QuantActions:QA-Android-SDK:0.4.1-rc2'
+``` Java
+implementation 'com.github.QuantActions:QA-Android-SDK:0.5.0'
 
 ```
 
 
 `MainActivity.java`
 
-```Java
+``` Java
 package com.example.sdktestapp
 
 import androidx.appcompat.app.AppCompatActivity
@@ -243,14 +219,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         QA qa = QA.getInstance() // instantiate
-        qa.init(MainActivity.this, QA_AUTH_KEY, null) // initialize SDK
+        qa.init(MainActivity.this, QA_AUTH_KEY, 1991, 2) // initialize SDK
         qa.requestOverlayPermission(MainActivity.this) // opens overlay settings page
         qa.requestUsagePermission(MainActivity.this) // opens usage settings page
-        qa.signUpForStudy(MainActivity.this, QA_STUDY_ID null));  // register the device with the backend
-        qa.syncData(MainActivity.this, null) // optional: sync the data
+        qa.signUpForStudy(MainActivity.this, QA_STUDY_ID));  // register the device with the backend
+        qa.syncData(MainActivity.this) // optional: sync the data
     }
 }
 ```
+
+---
+
+## Data retrieval 
+While the data collection and synchronization is automated within the SDK. Retrieval of processed 
+metrics has to be done manually within the app in order to access only the subset of metrics that the application needs.
+
+There are 2 types of Metrics:
+- numerical values (e.g. sleep score for Tuesday = 80.9)
+- string values (e.g. total screen time for Tuesday = 2:20 in the format [hh:mm])
+
+The metrics can be retrieve programmatically in the following way:
+
+``` Java
+getStat(context, statCode);
+getStat(context, statCode);
+```
+
+Both functions return an asynchronous [Kotlin Flow](https://kotlinlang.org/docs/flow.html).
+The test app accompanying the SDK has some examples on how to handle the return data.
+
+Regarding `statCode`, you will receive a list of Metrics and corresponding codes from us depending 
+on what metrics you have requested.
 
 ---
 
