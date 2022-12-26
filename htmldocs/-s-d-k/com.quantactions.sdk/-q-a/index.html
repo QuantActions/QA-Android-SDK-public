@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>QA</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../styles/logo-style.css" rel="Stylesheet">
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>SDK</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="SDK::com.quantactions.sdk/QA///PointingToDeclaration//740937853">
+  <div class="breadcrumbs"><a href="../../../index.html">SDK</a><span class="delimiter">/</span><a href="../index.html">com.quantactions.sdk</a><span class="delimiter">/</span><span class="current">QA</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>QA</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">QA</a></div><p class="paragraph">This is the main element one needs to use to access all the functionality of the QA SDK. As a singleton it can be called easily from anywhere in the code and gives access to all the possible interactions with the QA backend, as well as some functions to retrieve user metrics. Since most of the calls are asynchronous server interactions, they return  flows.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph"><a href="mailto:support@quantactions.com">Enea Ceolini</a></p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="901406691%2FClasslikes%2F740937853" anchor-label="Flag" id="901406691%2FClasslikes%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-flag/index.html"><span><span>Flag</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="901406691%2FClasslikes%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-flag/index.html">Flag</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-flag/index.html">QA.Flag</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">This internal class holds the string that identify the flags for requesting the number of taps in a certain period with <a href="get-last-taps.html">QA.getLastTaps</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1215100590%2FClasslikes%2F740937853" anchor-label="Gender" id="1215100590%2FClasslikes%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-gender/index.html"><span><span>Gender</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1215100590%2FClasslikes%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-gender/index.html">Gender</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-gender/index.html">QA.Gender</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enumeration class containing the available Genders for the registration of the device.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="370452232%2FFunctions%2F740937853" anchor-label="canDraw" id="370452232%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="can-draw.html"><span>can</span><wbr></wbr><span><span>Draw</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="370452232%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="can-draw.html"><span class="token function">canDraw</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether or not the <code class="lang-kotlin">draw over other apps</code> permission has been granted</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="573509918%2FFunctions%2F740937853" anchor-label="canUsage" id="573509918%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="can-usage.html"><span>can</span><wbr></wbr><span><span>Usage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="573509918%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="can-usage.html"><span class="token function">canUsage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether or not the <code class="lang-kotlin">usage</code> permission has been granted</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1966778868%2FFunctions%2F740937853" anchor-label="createJournalEntry" id="-1966778868%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="create-journal-entry.html"><span>create</span><wbr></wbr><span>Journal</span><wbr></wbr><span><span>Entry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1966778868%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="create-journal-entry.html"><span class="token function">createJournalEntry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">date<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/time/LocalDate.html">LocalDate</a><span class="token punctuation">, </span></span><span class="parameter ">note<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">events<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.quantactions.sdk.data.entity/-journal-event/index.html">JournalEvent</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">ratings<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">oldId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Use this utility function to create or edit a journal entry. In case you want to edit a note you will need to pass the ID of the entity to edit. The function returns an asynchronous flow with the response of the action. The response is mostly to trigger UI/UX events, in case of failure the SDK will take care internally of retrying.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="734092312%2FFunctions%2F740937853" anchor-label="deleteJournalEntry" id="734092312%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-journal-entry.html"><span>delete</span><wbr></wbr><span>Journal</span><wbr></wbr><span><span>Entry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="734092312%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="delete-journal-entry.html"><span class="token function">deleteJournalEntry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Use this function to delete a journal entry. You need to provide the id of the entry you want to delete, checkout <a href="get-journal.html">getJournal</a> and <span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span> to see how to retrieve the id of the entry to delete.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-29320176%2FFunctions%2F740937853" anchor-label="getBasicInfo" id="-29320176%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-basic-info.html"><span>get</span><wbr></wbr><span>Basic</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-29320176%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-basic-info.html"><span class="token function">getBasicInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-basic-info/index.html">BasicInfo</a></div><div class="brief "><p class="paragraph">Use this function to retrieve the basic info (e.g. age and gender) with which the device was registered.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="818338709%2FFunctions%2F740937853" anchor-label="getDeviceId" id="818338709%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-device-id.html"><span>get</span><wbr></wbr><span>Device</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="818338709%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-device-id.html"><span class="token function">getDeviceId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Use this function to retrieve the unique identifier of the device.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1870948122%2FFunctions%2F740937853" anchor-label="getFirebaseToken" id="1870948122%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-firebase-token.html"><span>get</span><wbr></wbr><span>Firebase</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1870948122%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-firebase-token.html"><span class="token function">getFirebaseToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Get the current Firebase token. This can be saved in one's backend to allow for remote Firebase messaging</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2079048837%2FFunctions%2F740937853" anchor-label="getHasFinishedOnboarding" id="2079048837%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-has-finished-onboarding.html"><span>get</span><wbr></wbr><span>Has</span><wbr></wbr><span>Finished</span><wbr></wbr><span><span>Onboarding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2079048837%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-has-finished-onboarding.html"><span class="token function">getHasFinishedOnboarding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Utility function. Use this function to get the flag if the onboarding has finished.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2045441269%2FFunctions%2F740937853" anchor-label="getJournal" id="2045441269%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-journal.html"><span>get</span><wbr></wbr><span><span>Journal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2045441269%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-journal.html"><span class="token function">getJournal</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">This functions returns the full journal of the device, meaning all entries with the corresponding events. Checkout <span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span> for a complete description of how the journal entries are organized.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1247549405%2FFunctions%2F740937853" anchor-label="getJournalEntry" id="1247549405%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-journal-entry.html"><span>get</span><wbr></wbr><span>Journal</span><wbr></wbr><span><span>Entry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1247549405%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-journal-entry.html"><span class="token function">getJournalEntry</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">journalEntryId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Use this function to retrieve a particular journal entry. You need to provide the id of the entry you want to retrieve, checkout <a href="get-journal.html">getJournal</a> and <span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span> to see how to retrieve the id of the entry.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1991314407%2FFunctions%2F740937853" anchor-label="getJournalEvents" id="1991314407%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-journal-events.html"><span>get</span><wbr></wbr><span>Journal</span><wbr></wbr><span><span>Events</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1991314407%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-journal-events.html"><span class="token function">getJournalEvents</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.quantactions.sdk.data.entity/-journal-event/index.html">JournalEvent</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves the Journal events, meaning the events that one can log together with a journal entry. The events come from a fixed set which may be updated in the future, this function return the latest update to the <a href="../../com.quantactions.sdk.data.entity/-journal-event/index.html">JournalEvent</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1117201800%2FFunctions%2F740937853" anchor-label="getJournalSample" id="-1117201800%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-journal-sample.html"><span>get</span><wbr></wbr><span>Journal</span><wbr></wbr><span><span>Sample</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1117201800%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-journal-sample.html"><span class="token function">getJournalSample</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">This functions returns a fictitious journal and can be used for test/display purposes, Checkout <span data-unresolved-link="com.quantactions.sdk.data.model/JournalEntryWithEvents///PointingToDeclaration/">JournalEntryWithEvents</span> for a complete description of how the journal entries are organized.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="301728106%2FFunctions%2F740937853" anchor-label="getLastTaps" id="301728106%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-last-taps.html"><span>get</span><wbr></wbr><span>Last</span><wbr></wbr><span><span>Taps</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="301728106%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-last-taps.html"><span class="token function">getLastTaps</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">flag<span class="token operator">: </span><a href="-flag/index.html">QA.Flag</a><span class="token punctuation">, </span></span><span class="parameter ">currentTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-q-a-taps/index.html">QATaps</a></div><div class="brief "><p class="paragraph">Retrieves taps in the last day, week or month depending on the provided flag. Please also <a href="../-q-a-taps/index.html">QATaps</a> shows the provided result structure. Alpha feature, try setting flag as the number of days you would like to gat back.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="225274489%2FFunctions%2F740937853" anchor-label="getMetric" id="225274489%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-metric.html"><span>get</span><wbr></wbr><span><span>Metric</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="225274489%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-metric.html"><span class="token function">getMetric</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">score<span class="token operator">: </span><a href="../-metric/index.html">Metric</a><span class="token punctuation">, </span></span><span class="parameter ">from<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span>Double.POSITIVE_INFINITY.roundToLong()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-time-series/index.html">TimeSeries</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Get a QA metric relative to the device in use. Check the the list of available metrics from <a href="../-metric/index.html">Metric</a>. The function returns an object of type <a href="../-time-series/index.html">TimeSeries</a> which contains timestamps and values of the requested metric. The call is asynchronous ans returns a flow.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1603291823%2FFunctions%2F740937853" anchor-label="getMetricAsync" id="1603291823%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-metric-async.html"><span>get</span><wbr></wbr><span>Metric</span><wbr></wbr><span><span>Async</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1603291823%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-metric-async.html"><span class="token function">getMetricAsync</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">score<span class="token operator">: </span><a href="../-metric/index.html">Metric</a><span class="token punctuation">, </span></span><span class="parameter ">from<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span>Double.POSITIVE_INFINITY.roundToLong()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-time-series/index.html">TimeSeries</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Asynchronous version of <a href="get-metric.html">getMetric</a>. The functionality is identical except that it implements it with a coroutine logic instead of a flow logic. Can be used in cases where coroutines can be executed and flow are not necessary, e.g. background update tasks.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1633571075%2FFunctions%2F740937853" anchor-label="getMetricSample" id="1633571075%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-metric-sample.html"><span>get</span><wbr></wbr><span>Metric</span><wbr></wbr><span><span>Sample</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1633571075%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-metric-sample.html"><span class="token function">getMetricSample</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">score<span class="token operator">: </span><a href="../-metric/index.html">Metric</a><span class="token punctuation">, </span></span><span class="parameter ">from<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">to<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span>Double.POSITIVE_INFINITY.roundToLong()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-time-series/index.html">TimeSeries</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Get a QA metric relative to a fictitious test device. Check the the list of available metrics from <a href="../-metric/index.html">Metric</a>. The function returns an object of type <a href="../-time-series/index.html">TimeSeries</a> which contains timestamps and values of the requested metric. The call is asynchronous ans returns a flow. You can use this function to test your data workflow and visualization.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-27533919%2FFunctions%2F740937853" anchor-label="getMetricSampleAsync" id="-27533919%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-metric-sample-async.html"><span>get</span><wbr></wbr><span>Metric</span><wbr></wbr><span>Sample</span><wbr></wbr><span><span>Async</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-27533919%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-metric-sample-async.html"><span class="token function">getMetricSampleAsync</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">score<span class="token operator">: </span><a href="../-metric/index.html">Metric</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-time-series/index.html">TimeSeries</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Asynchronous version of <a href="get-metric-sample.html">getMetricSample</a>. The functionality is identical except that it implements it with a coroutine logic instead of a flow logic. Can be used in cases where coroutines can be executed and flow are not necessary, e.g. background update tasks.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-77998157%2FFunctions%2F740937853" anchor-label="getParticipationId" id="-77998157%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-participation-id.html"><span>get</span><wbr></wbr><span>Participation</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-77998157%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-participation-id.html"><span class="token function">getParticipationId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-part-id-response/index.html">PartIdResponse</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns an object of type <a href="../-part-id-response/index.html">PartIdResponse</a> that contains the participation ID of the study to which the device is currently subscribed to, if multiple devices are subscribed using the same participationId it returns all the device IDs.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1680351464%2FFunctions%2F740937853" anchor-label="getQuestionnairesList" id="-1680351464%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-questionnaires-list.html"><span>get</span><wbr></wbr><span>Questionnaires</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1680351464%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-questionnaires-list.html"><span class="token function">getQuestionnairesList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.quantactions.sdk.data.entity/-questionnaire/index.html">Questionnaire</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Get a list of all the questionnaires available to complete (across all the studies to which a device is subscribed to).</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2130018149%2FFunctions%2F740937853" anchor-label="getStudyList" id="2130018149%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-study-list.html"><span>get</span><wbr></wbr><span>Study</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2130018149%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-study-list.html"><span class="token function">getStudyList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.quantactions.sdk.data.entity/-study/index.html">Study</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves the list of studies the device is currently registered for.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1609790075%2FFunctions%2F740937853" anchor-label="init" id="1609790075%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="init.html"><span><span>init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1609790075%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="init.html"><span class="token function">init</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">apiKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">age<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">gender<span class="token operator">: </span><a href="-gender/index.html">QA.Gender</a><span class="token operator"> = </span>Gender.UNKNOWN<span class="token punctuation">, </span></span><span class="parameter ">selfDeclaredHealthy<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">The first time you use the QA SDK in the code you should initialize it, this allows the SDK to create a unique identifier and initiate server transactions and workflows. Most of the functionality will not work if you have never initialized the singleton before.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1765071284%2FFunctions%2F740937853" anchor-label="isDataCollectionRunning" id="1765071284%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-data-collection-running.html"><span>is</span><wbr></wbr><span>Data</span><wbr></wbr><span>Collection</span><wbr></wbr><span><span>Running</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1765071284%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-data-collection-running.html"><span class="token function">isDataCollectionRunning</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-103984761%2FFunctions%2F740937853" anchor-label="isInit" id="-103984761%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-init.html"><span>is</span><wbr></wbr><span><span>Init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-103984761%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-init.html"><span class="token function">isInit</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Checks whether or not the SDK is initialized.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1736256794%2FFunctions%2F740937853" anchor-label="isTablet" id="-1736256794%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-tablet.html"><span>is</span><wbr></wbr><span><span>Tablet</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1736256794%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-tablet.html"><span class="token function">isTablet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether or not the device in use can be considered a Tablet</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2135073369%2FFunctions%2F740937853" anchor-label="launchProtectedAppsDialog" id="-2135073369%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="launch-protected-apps-dialog.html"><span>launch</span><wbr></wbr><span>Protected</span><wbr></wbr><span>Apps</span><wbr></wbr><span><span>Dialog</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2135073369%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="launch-protected-apps-dialog.html"><span class="token function">launchProtectedAppsDialog</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Launch the protected apps dialog. Some manufacturers kill apps that are running for too long, on those devices it is better to ask the user to prevent the OS from killing the app running this SDK.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-280417446%2FFunctions%2F740937853" anchor-label="leaveStudy" id="-280417446%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="leave-study.html"><span>leave</span><wbr></wbr><span><span>Study</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-280417446%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="leave-study.html"><span class="token function">leaveStudy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">studyId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Use this to withdraw the device from a particular study.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="997718976%2FFunctions%2F740937853" anchor-label="recordQuestionnaireResponse" id="997718976%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="record-questionnaire-response.html"><span>record</span><wbr></wbr><span>Questionnaire</span><wbr></wbr><span><span>Response</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="997718976%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="record-questionnaire-response.html"><span class="token function">recordQuestionnaireResponse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">code<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">date<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">fullID<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">response<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Saves a questionnaire response.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="692175069%2FFunctions%2F740937853" anchor-label="requestOverlayPermission" id="692175069%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="request-overlay-permission.html"><span>request</span><wbr></wbr><span>Overlay</span><wbr></wbr><span><span>Permission</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="692175069%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="request-overlay-permission.html"><span class="token function">requestOverlayPermission</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">This function checks if the overlay permission has been granted, if not opens the corresponding settings activity to prompt the user to grant this permission.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1851777006%2FFunctions%2F740937853" anchor-label="requestUsagePermission" id="1851777006%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="request-usage-permission.html"><span>request</span><wbr></wbr><span>Usage</span><wbr></wbr><span><span>Permission</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1851777006%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="request-usage-permission.html"><span class="token function">requestUsagePermission</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">This function checks if the usage permission has been granted, if not open the corresponding settings activity to prompt the user to grant this permission.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1987947675%2FFunctions%2F740937853" anchor-label="resumeCollectionRunning" id="1987947675%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="resume-collection-running.html"><span>resume</span><wbr></wbr><span>Collection</span><wbr></wbr><span><span>Running</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1987947675%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="resume-collection-running.html"><span class="token function">resumeCollectionRunning</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1982826082%2FFunctions%2F740937853" anchor-label="sendNote" id="1982826082%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="send-note.html"><span>send</span><wbr></wbr><span><span>Note</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1982826082%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="send-note.html"><span class="token function">sendNote</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">text<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Saves simple text note.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1337963920%2FFunctions%2F740937853" anchor-label="setHasFinishedOnboarding" id="-1337963920%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-has-finished-onboarding.html"><span>set</span><wbr></wbr><span>Has</span><wbr></wbr><span>Finished</span><wbr></wbr><span><span>Onboarding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1337963920%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-has-finished-onboarding.html"><span class="token function">setHasFinishedOnboarding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">hasFinishedOnboarding<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Utility function. Use this function to set the flag if the onboarding has finished. This can be used to prevent the SDK checking for given permissions.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1832049962%2FFunctions%2F740937853" anchor-label="signUpForStudy" id="1832049962%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="sign-up-for-study.html"><span>sign</span><wbr></wbr><span>Up</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Study</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1832049962%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="sign-up-for-study.html"><span class="token function">signUpForStudy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">participationId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="com.quantactions.sdk.data.api.adapters/StudyWithQuestionnaires///PointingToDeclaration/">StudyWithQuestionnaires</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Use this function to subscribe the device to a certain study.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1940725210%2FFunctions%2F740937853" anchor-label="stopService" id="1940725210%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="stop-service.html"><span>stop</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1940725210%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="stop-service.html"><span class="token function">stopService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-21446959%2FFunctions%2F740937853" anchor-label="syncData" id="-21446959%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="sync-data.html"><span>sync</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-21446959%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="sync-data.html"><span class="token function">syncData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/util/UUID.html">UUID</a></div><div class="brief "><p class="paragraph">Utility function to sync all the local data with the server. Due to the complexity of the work, it spawns a Worker and return its UUID. The status of the worker can be observed to check its status of SUCCESS/FAILURE.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1623121044%2FFunctions%2F740937853" anchor-label="validateToken" id="1623121044%2FFunctions%2F740937853" data-filterable-set=":qa_sdk:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":qa_sdk:dokkaHtml/release" data-filterable-set=":qa_sdk:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="validate-token.html"><span>validate</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1623121044%2FFunctions%2F740937853"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":qa_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="validate-token.html"><span class="token function">validateToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">apiKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-q-a-response/index.html">QAResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Use this function to double check that your API key is correct and valid, this is just for testing purposes.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Made with ❤️ at QuantActions</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

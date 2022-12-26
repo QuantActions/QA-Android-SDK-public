@@ -1,6 +1,0 @@
-//[qa_sdk](../../../index.md)/[com.quantactions.sdk.data.entity](../index.md)/[StudyEntity](index.md)/[StudyEntity](-study-entity.md)
-
-# StudyEntity
-
-[androidJvm]\
-fun [StudyEntity](-study-entity.md)(studyId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), privacyPolicy: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, studyTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, dataPattern: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, gpsResolution: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), canWithdraw: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), syncOnScreenOff: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, perimeterCheck: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, permAppId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, permDrawOver: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, permLocation: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, permContact: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?)
