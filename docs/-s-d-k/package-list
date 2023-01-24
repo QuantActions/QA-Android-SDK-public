@@ -103,14 +103,14 @@ $dokka.location:com.quantactions.sdk/QA/isInit/#android.content.Context/Pointing
 $dokka.location:com.quantactions.sdk/QA/isTablet/#android.content.Context?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/is-tablet.html
 $dokka.location:com.quantactions.sdk/QA/launchProtectedAppsDialog/#android.content.Context?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/launch-protected-apps-dialog.html
 $dokka.location:com.quantactions.sdk/QA/leaveStudy/#android.content.Context?#kotlin.String?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/leave-study.html
+$dokka.location:com.quantactions.sdk/QA/pauseDataCollection/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/pause-data-collection.html
 $dokka.location:com.quantactions.sdk/QA/recordQuestionnaireResponse/#android.content.Context?#kotlin.String?#kotlin.String?#kotlin.Long?#kotlin.String?#kotlin.String?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/record-questionnaire-response.html
 $dokka.location:com.quantactions.sdk/QA/requestOverlayPermission/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/request-overlay-permission.html
 $dokka.location:com.quantactions.sdk/QA/requestUsagePermission/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/request-usage-permission.html
-$dokka.location:com.quantactions.sdk/QA/resumeCollectionRunning/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/resume-collection-running.html
+$dokka.location:com.quantactions.sdk/QA/resumeDataCollection/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/resume-data-collection.html
 $dokka.location:com.quantactions.sdk/QA/sendNote/#android.content.Context?#kotlin.String?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/send-note.html
 $dokka.location:com.quantactions.sdk/QA/setHasFinishedOnboarding/#android.content.Context?#kotlin.Boolean?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/set-has-finished-onboarding.html
 $dokka.location:com.quantactions.sdk/QA/signUpForStudy/#android.content.Context#kotlin.String/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/sign-up-for-study.html
-$dokka.location:com.quantactions.sdk/QA/stopService/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/stop-service.html
 $dokka.location:com.quantactions.sdk/QA/syncData/#android.content.Context?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/sync-data.html
 $dokka.location:com.quantactions.sdk/QA/validateToken/#android.content.Context#kotlin.String?/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/validate-token.html
 $dokka.location:com.quantactions.sdk/QAResponse.QAErrorResponse///PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a-response/-q-a-error-response/index.html

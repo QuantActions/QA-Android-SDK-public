@@ -1,3 +1,5 @@
+#Module SDK
+
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
 - Automatic data collection
@@ -9,18 +11,33 @@ The QuantActions SDK for Android can be set up with a few easy steps. We recomme
 
 This is an issue-only public repository for the distribution of the documentation of the SDK, the gathering of issues and feature requests and the distribution of samples.
 
----
 
 ## 1. Android Studio setup
 
 The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is private and can only be accessed prior a request, please write you request (containing your **github username**) to [development@quantactions.com](mailto:development@quantactions.com).
 
-1. Ensure that you have selected a minimum Android SDK of **21** for your project by checking that the app-level `build.gradle` file contains this code
+1. Ensure that you have selected a minimum Android SDK of **21** for your project by checking that the app-level `build.gradle`, also we recommend using JAVA 11, remember to enable desugaring options since the SDK uses advanced Java functionality that are not normally available at lower Android API levels
 
     ```groovy
+   android {
     defaultConfig {
         minSdkVersion 21
     }
+   
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+     }
+     kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+     }
+   }
+   
+   dependencies {
+       coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+   }
+   
     ```
 
 2. Follow the [instructions from JitPack](https://jitpack.io/docs/PRIVATE/) for the access to private artifacts. When you have your auth token simply add it you your general `gradle.properties`
@@ -29,23 +46,19 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
     authToken=api_key_from_jitpack
     ```
 
-   and add the JitPack repo to the project-level `build.gradle`
+   and add the JitPack repo to the project-level `build.gradle` or the `seetings.gradle` depending of your project setup
 
     ```groovy
-    allprojects{
-      repositories {
-          maven {
-              url "https://jitpack.io"
-              credentials { username authToken }
-          }
-      }
+    maven {
+       url "https://jitpack.io"
+       credentials { username authToken }
     }
     ```
 
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.7.2'
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.7.3'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -126,14 +139,13 @@ QA.signUpForStudy(context, studyId)
 
 ---
 
-## Firebase
+## 5. Firebase
 
 For the best experience with the SDK we strongly recommend to add to your app [Firebase Messaging, Crashlytics and Analytics](https://firebase.google.com/), this will allow QA service to also communicate with the app to check its status and more.
 
 ------------------
 
-
-## The notification icon
+## 6. The notification icon
 Because QA SDK is always active in the background, Android API O and above require a notification to always be present to inform the user, by default the notification uses [this](https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aequalizer%3A) icon. To override it and use your own icon you can simply create a drawable named `ic_equalizer_black_24dp` and place it in your `res/drawable` folder and this will override the drawable of the SDK.
 
 Moreover the SDK notification uses a separate notification channel called `QA Service` and can be easily unselected by the user from the OS notifications settings to avoid having it always present.
@@ -141,7 +153,7 @@ Moreover the SDK notification uses a separate notification channel called `QA Se
 
 -------
 
-# TL:DR
+## 7. TL:DR
 Minimal example
 
 - Get a `QA_API_KEY` from [QuantActions](mailto:development@quantactions.com)
@@ -159,7 +171,6 @@ authToken=api_key_from_jitpack
 `build.gradle` (project level)
 
 ```groovy
-...
 allprojects {
     repositories {
         google()
@@ -169,25 +180,30 @@ allprojects {
         }
     }
 }
-...
+
 ```
 
 `build.gradle` (app level)
 
 ```groovy
+android {
+   defaultConfig {
+      minSdkVersion 21
+   }
 
-...
+   compileOptions {
+      coreLibraryDesugaringEnabled true
+      sourceCompatibility JavaVersion.VERSION_11
+      targetCompatibility JavaVersion.VERSION_11
+   }
+   kotlinOptions {
+      jvmTarget = JavaVersion.VERSION_11.toString()
+   }
+}
 
-defaultConfig {
-        minSdkVersion 21
-        ...
-        buildConfigField("String", "QA_API_KEY", "\"api_key\"")
-        buildConfigField("String", "QA_STUDY_ID", "\"study_id\"")
-    }
-    
-    ...
-
-implementation 'com.github.QuantActions:QA-Android-SDK:0.7.2'
+dependencies {
+   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+}
 
 ```
 
@@ -223,15 +239,45 @@ class MainActivity : AppCompatActivity() {
 
 ---
 
-## Metrics retrieval
+## 8. Checking that everything is running fine
+After the integration of the SDk has been done, you can add some checks to make sure everything is running fine.
+1. You can check that the SDk has been initialized correctly by using `QA.isInit(context)` (returns a bool)
+2. You can check that the data collection is running fine by using `QA.isDataCollectionRunning(context)` (returns a bool)
+3. You can check that the device has been registered with the QA backend and/or the registration to a cohort was successful
+```kotlin
+    viewModelScope.launch {
+        withContext(Dispatchers.Default) {
+            QA.getParticipationId(getApplication<Application>().applicationContext).collect {
+                when(it) {
+                    is QAResponse.QASuccessResponse -> Timber.d(it.data!!)
+                    is QAResponse.QAErrorResponse -> {
+                        if (it.message!!.contains("it is not part of any cohort")){
+                            Timber.d("Device is registered but not part of any cohort")
+                        } else {
+                           Timber.d("Device is NOT registered with QA backend")
+                        }
+                    }
+                    is QAResponse.QALoadingResponse -> Timber.d("Loading")
+                }
+            }
+        }
+    }
+```
+
+## 9. Pausing data collection
+
+Although we do not recommend it, the data collection can be paused/resumed via the methods offered by QA singleton
+[QA.pauseDataCollection(context)](com.quantactions.sdk.QA.pauseDataCollection) and [QA.resumeDataCollection(context)](com.quantactions.sdk.QA.resumeDataCollection)
+
+## 10. Metrics retrieval
 While the data collection and synchronization is automated within the SDK. Retrieval of metrics and insights
 has to be done manually within the app in order to access only the subset of metrics that the application needs.
 
 The metrics can be retrieve programmatically in the following way:
 
 ```kotlin
-getMetric(context, Metric.SLEEP_SCORE)
-getMetric(context, Metric.COGNITIVE_SPEED)
+QA.getMetric(context, Metric.SLEEP_SCORE)
+QA.getMetric(context, Metric.COGNITIVE_SPEED)
 ```
 
 Check [Metric](com.quantactions.sdk.Metric) for the list of metrics available in the current version of the SDK
@@ -243,7 +289,7 @@ The test app accompanying the SDK has some examples on how to handle the return 
 Since the metrics for a user take from 2 to 7 days to be available (see [ETA](com.quantactions.sdk.Metric.eta)).
 Developer can have access to sample metrics (that update e very day) from a sampled device with [getMetricSample](com.quantactions.sdk.QA.getMetricSample)
 
-## Metrics
+## 11. Metrics
 
 The current version is shipped with the following metrics:
 
@@ -262,7 +308,7 @@ When some days are missing you can fill in the gaps with NaNs using [fillMissing
 
 Checkout the metrics individual pages for more information about each metric.
 
-## Journaling
+## 12. Journaling
 
 The SDK allows also to use a journaling function to log a series of entries. Each entry is composed of:
 - A date
@@ -279,14 +325,22 @@ The full journal (all entries) can be retrieved with [getJournal](com.quantactio
 
 As for the metrics an example journal can be retrieved for debug purposes with [getSampleJournal](com.quantactions.sdk.QA.getSampleJournal).
 
-## Questionnaires
+## 13. Questionnaires
 
 Both classic and custom questionnaires can be sub-ministered to users via the SDK.
 Get in touch [with us](mailto:development@quantactions.com) for more information about this feature.
 
-## Issue tracking and contact
+## 14. Issue tracking and contact
 Feel free to use the issue tracking of this repo to report any problem with the SDK, in case of more immediate assistance need feel free to contact us at [development@quantactions.com](mailto:development@quantactions.com)
 
+#Package com.quantactions.sdk
+The main functionality of the Quantactions Android SDK.
+
+#Package com.quantactions.sdk.data.entity
+Entities used across the SDK for particular functionalities.
+
+#Package com.quantactions.sdk.exceptions
+Exceptions that the SDK might be throwing.
 
 
 
