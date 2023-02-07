@@ -1,5 +1,5 @@
 # QuantActions - Android SDK
-![version](https://img.shields.io/badge/version-1.2.3-blue)
+![version](https://img.shields.io/badge/version-0.7.3-green)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
