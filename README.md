@@ -1,5 +1,5 @@
 # QuantActions - Android SDK
-![version](https://img.shields.io/badge/version-0.7.3-green)
+![version](https://img.shields.io/badge/version-0.8.0-blue)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
@@ -12,18 +12,33 @@ The QuantActions SDK for Android can be set up with a few easy steps. We recomme
 
 This is an issue-only public repository for the distribution of the documentation of the SDK, the gathering of issues and feature requests and the distribution of samples.
 
----
 
 ## 1. Android Studio setup
 
 The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is private and can only be accessed prior a request, please write you request (containing your **github username**) to [development@quantactions.com](mailto:development@quantactions.com).
 
-1. Ensure that you have selected a minimum Android SDK of **21** for your project by checking that the app-level `build.gradle` file contains this code
+1. Ensure that you have selected a minimum Android SDK of **21** for your project by checking that the app-level `build.gradle`, also we recommend using JAVA 11, remember to enable desugaring options since the SDK uses advanced Java functionality that are not normally available at lower Android API levels
 
     ```groovy
+   android {
     defaultConfig {
         minSdkVersion 21
     }
+   
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+     }
+     kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+     }
+   }
+   
+   dependencies {
+       coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+   }
+   
     ```
 
 2. Follow the [instructions from JitPack](https://jitpack.io/docs/PRIVATE/) for the access to private artifacts. When you have your auth token simply add it you your general `gradle.properties`
@@ -32,16 +47,12 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
     authToken=api_key_from_jitpack
     ```
 
-   and add the JitPack repo to the project-level `build.gradle`
+   and add the JitPack repo to the project-level `build.gradle` or the `seetings.gradle` depending of your project setup
 
     ```groovy
-    allprojects{
-      repositories {
-          maven {
-              url "https://jitpack.io"
-              credentials { username authToken }
-          }
-      }
+    maven {
+       url "https://jitpack.io"
+       credentials { username authToken }
     }
     ```
 
@@ -63,7 +74,7 @@ The whole QA functionality can be accessed everywhere in the code by the singlet
 
 ```kotlin
 import com.quantactions.sdk.QA
-val qa = QA.getInstance()
+val qa = QA.getInstance(context)
 ```
 
 Before using any functionality, the QA singleton needs to be initialized. To do so you will need an `api_key` provided by QuantActions. If you have not yet received your `api_key` please [contact us](mailto:development@quantactions.com).
@@ -84,7 +95,7 @@ Once in possession of the `api_key`, the simplest thing to do is to add your `ap
 then you can access it in the code to initialize the SDK.
 
 ```kotlin
-QA.init(context,
+qa.init(context,
         apiKey=BuildConfig.QA_API_KEY, 
         age=1985, 
         gender=QA.Gender.UNKNOWN, 
@@ -102,34 +113,34 @@ For the SDK to work properly, the app that uses it needs to request 2 permission
 To prompt the user to enable these permissions you can use the methods
 
 ```kotlin
-QA.requestOverlayPermission(context) // opens overlay settings page
-QA.requestUsagePermission(context) // opens usage settings page
+qa.requestOverlayPermission(context) // opens overlay settings page
+qa.requestUsagePermission(context) // opens usage settings page
 ```
 
 Since these permissions can be revoked at any time by the user, it is important to routinely check
 that they are granted, to do so the easiest way is to have background scheduled task that check that the permissions are granted
-using `QA.canUsage()` and `QA.canDraw()` and fire a notification in case the permissions have been lost.
+using `qa.canUsage(context)` and `qa.canDraw(context)` and fire a notification in case the permissions have been lost.
 
 -----
 
-## 4. Sign-up to a cohort (a.k.a. study)
-To track a device it is **necessary** to subscribe the device to a cohort (also called study). Each device can be subscribed in two ways. For a study with a known number of devices to track, QuantActions provides a set of codes of the form `138e...28eb` that have to be distributed. The way the code is entered into the app is the choice of the developer. In our TapCounter R&D app we use both a copy&paste method and a QR code scanning method, once the code as been acquired the device can then be registered using the SDK
+## 4. Sign-up to a cohort
+To track a device it is **necessary** to subscribe the device to a cohort. Each device can be subscribed in two ways. For a cohort with a known number of devices to track, QuantActions provides a set of codes (subscriptionIds) of the form `138e...28eb` that have to be distributed. The way the code is entered into the app is the choice of the developer. In our TapCounter R&D app we use both a copy&paste method and a QR code scanning method, once the code as been acquired the device can then be registered using the SDK
 
 ```kotlin
-QA.signUpForStudy(context, participationId)
+qa.subscribe(subscriptionId)
 ```   
 
-where `participationId` is the string corresponding to the participation ID.
+where `subscriptionId` is the string corresponding to the subscription ID.
 
-For cohorts (or studies) where the number of participants is unknown the SDK can be used to register the device by simply using the `studyId` provided by QA (this way needs special access so make sure you are authorized by QuantActions to use this functionality).
+For cohorts where the number of participants is unknown the SDK can be used to register the device by simply using the `cohortId` provided by QA (this way needs special access so make sure you are authorized by QuantActions to use this functionality).
 
 ```kotlin
-QA.signUpForStudy(context, studyId)
+qa.subscribe(cohortId)
 ```   
 
-Note that multiple devices can be subscribed using the same `participationId`, this is the case when a user has multiple devices or changes devices (e.g. old phone is broken).
-The data from multiple devices sharing the same `participationId` will be merged to generate insights and metric, thus the same `participationId` should not be used for different users.
-When subscribing the device using a general `studyId`, get device gets automatically assigned a `participationId`, to retrieve this id and use it to register other devices one case use the following code.
+Note that multiple devices can be subscribed using the same `subscriptionId`, this is the case when a user has multiple devices or changes devices (e.g. old phone is broken).
+The data from multiple devices sharing the same `subscriptionId` will be merged to generate insights and metric, thus the same `subscriptionId` should not be used for different users.
+When subscribing the device using a general `cohortId`, get device gets automatically assigned a `subscriptionId`, to retrieve this id and use it to register other devices one case use the following code.
 
 ```kotlin
 qa.getParticipationId(applicationContext).collect {
@@ -151,14 +162,13 @@ qa.getParticipationId(applicationContext).collect {
 
 ---
 
-## Firebase
+## 5. Firebase
 
 For the best experience with the SDK we strongly recommend to add to your app [Firebase Messaging, Crashlytics and Analytics](https://firebase.google.com/), this will allow QA service to also communicate with the app to check its status and more.
 
 ------------------
 
-
-## The notification icon
+## 6. The notification icon
 Because QA SDK is always active in the background, Android API O and above require a notification to always be present to inform the user, by default the notification uses [this](https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aequalizer%3A) icon. To override it and use your own icon you can simply create a drawable named `ic_equalizer_black_24dp` and place it in your `res/drawable` folder and this will override the drawable of the SDK.
 
 Moreover the SDK notification uses a separate notification channel called `QA Service` and can be easily unselected by the user from the OS notifications settings to avoid having it always present.
@@ -166,11 +176,11 @@ Moreover the SDK notification uses a separate notification channel called `QA Se
 
 -------
 
-# TL:DR
+## 7. TL:DR
 Minimal example
 
 - Get a `QA_API_KEY` from [QuantActions](mailto:development@quantactions.com)
-- Get a `QA_STUDY_ID` from [QuantActions](mailto:development@quantactions.com)
+- Get a `QA_COHORT_ID` from [QuantActions](mailto:development@quantactions.com)
 - Get a `authToken` from [Jitpack](https://Jitpack.io)
 
 
@@ -184,7 +194,6 @@ authToken=api_key_from_jitpack
 `build.gradle` (project level)
 
 ```groovy
-...
 allprojects {
     repositories {
         google()
@@ -194,25 +203,32 @@ allprojects {
         }
     }
 }
-...
+
 ```
 
 `build.gradle` (app level)
 
 ```groovy
+android {
+   defaultConfig {
+      minSdkVersion 21
+      buildConfigField("String", "QA_API_KEY", "\"api_key\"")
+      buildConfigField("String", "QA_COHORT_ID", "\"cohort_id\"")
+   }
 
-...
+   compileOptions {
+      coreLibraryDesugaringEnabled true
+      sourceCompatibility JavaVersion.VERSION_11
+      targetCompatibility JavaVersion.VERSION_11
+   }
+   kotlinOptions {
+      jvmTarget = JavaVersion.VERSION_11.toString()
+   }
+}
 
-defaultConfig {
-        minSdkVersion 21
-        ...
-        buildConfigField("String", "QA_API_KEY", "\"api_key\"")
-        buildConfigField("String", "QA_STUDY_ID", "\"study_id\"")
-    }
-    
-    ...
-
-implementation 'com.github.QuantActions:QA-Android-SDK:0.7.3'
+dependencies {
+   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+}
 
 ```
 
@@ -225,7 +241,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quantactions.sdk.QA
 import com.example.sdktestapp.BuildConfig.QA_AUTH_KEY
-import com.example.sdktestapp.BuildConfig.QA_STUDY_ID
+import com.example.sdktestapp.BuildConfig.QA_COHORT_ID
 
 class MainActivity : AppCompatActivity() {
 
@@ -237,26 +253,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        QA.init(MainActivity.this, QA_API_KEY, 1985, QA.Gender.MALE, true) // initialize SDK
-        QA.requestOverlayPermission(MainActivity.this) // opens overlay settings page
-        QA.requestUsagePermission(MainActivity.this) // opens usage settings page
-        QA.signUpForStudy(MainActivity.this, QA_STUDY_ID)  // register the device with the backend
-        QA.syncData(MainActivity.this) // optional: sync the data
+        val qa = QA.getInstance(MainActivity.this)
+        qa.init(MainActivity.this, QA_API_KEY, 1985, QA.Gender.MALE, true) // initialize SDK
+        qa.requestOverlayPermission(MainActivity.this) // opens overlay settings page
+        qa.requestUsagePermission(MainActivity.this) // opens usage settings page
+        qa.subscribe(QA_COHORT_ID)  // register the device with the backend
+        qa.syncData() // optional: sync the data
     }
 }
 ```
 
 ---
 
-## Checking that everything is running fine
-After the integration of the SDk has been done, you can add some checks to make sure everything is running fine.
-1. You can check that the SDk has been initialized correctly by using `QA.isInit(context)` (returns a bool)
-2. You can check that the data collection is running fine by using `QA.isDataCollectionRunning(context)` (returns a bool)
+## 8. Checking that everything is running fine
+After the integration of the SDK has been done, you can add some checks to make sure everything is running fine.
+1. You can check that the SDK has been initialized correctly by using `qa.isInit(context)` (returns a bool)
+2. You can check that the data collection is running fine by using `qa.isDataCollectionRunning(context)` (returns a bool)
 3. You can check that the device has been registered with the QA backend and/or the registration to a cohort was successful
 ```kotlin
     viewModelScope.launch {
         withContext(Dispatchers.Default) {
-            QA.getParticipationId(getApplication<Application>().applicationContext).collect {
+            qa.getParticipationId(getApplication<Application>().applicationContext).collect {
                 when(it) {
                     is QAResponse.QASuccessResponse -> Timber.d(it.data!!)
                     is QAResponse.QAErrorResponse -> {
@@ -273,17 +290,20 @@ After the integration of the SDk has been done, you can add some checks to make 
     }
 ```
 
+## 9. Pausing data collection
 
+Although we do not recommend it, the data collection can be paused/resumed via the methods offered by QA singleton
+[qa.pauseDataCollection(context)](com.quantactions.sdk.QA.pauseDataCollection) and [qa.resumeDataCollection(context)](com.quantactions.sdk.QA.resumeDataCollection)
 
-## Metrics retrieval
+## 10. Metrics retrieval
 While the data collection and synchronization is automated within the SDK. Retrieval of metrics and insights
 has to be done manually within the app in order to access only the subset of metrics that the application needs.
 
 The metrics can be retrieve programmatically in the following way:
 
 ```kotlin
-getMetric(context, Metric.SLEEP_SCORE)
-getMetric(context, Metric.COGNITIVE_SPEED)
+qa.getMetric(Metric.SLEEP_SCORE)
+qa.getMetric(Metric.COGNITIVE_FITNESS)
 ```
 
 Check [Metric](com.quantactions.sdk.Metric) for the list of metrics available in the current version of the SDK
@@ -295,7 +315,7 @@ The test app accompanying the SDK has some examples on how to handle the return 
 Since the metrics for a user take from 2 to 7 days to be available (see [ETA](com.quantactions.sdk.Metric.eta)).
 Developer can have access to sample metrics (that update e very day) from a sampled device with [getMetricSample](com.quantactions.sdk.QA.getMetricSample)
 
-## Metrics
+## 11. Metrics
 
 The current version is shipped with the following metrics:
 
@@ -303,18 +323,24 @@ The current version is shipped with the following metrics:
 - [COGNITIVE_FITNESS](com.quantactions.sdk.Metric.COGNITIVE_FITNESS)
 - [SOCIAL_ENGAGEMENT](com.quantactions.sdk.Metric.SOCIAL_ENGAGEMENT)
 
-Each of these scores has a value in the range 0-100 and is shipped with confidence intervals (high and low)
-and a general confidence about the score.
+Each of these metric has a value in the range 0-100 and is shipped with confidence intervals (high and low)
+and a general confidence about the metric.
 
-While the scores have daily resolutions, the are updated every two hours.
+- [SLEEP_SUMMARY](com.quantactions.sdk.Metric.SLEEP_SUMMARY)
 
-In some cases the score for a day might be missing, in that case it means that there was not enough
+This metric reports more information about the sleep of the user including bed time, wake up time
+and number and legth of interruptions. See also [SleepSummary](com.quantactions.sdk.data.model.SleepSummary)
+for more information on how this metric is organized.
+
+While the metrics have daily resolutions, the are updated every two hours.
+
+In some cases the metrics for a day might be missing, in that case it means that there was not enough
 data collect for that day to give an estimate or that the confidence was too low to give an appropriate estimate.
 When some days are missing you can fill in the gaps with NaNs using [fillMissingDays](com.quantactions.sdk.TimeSeries.fillMissingDays)
 
 Checkout the metrics individual pages for more information about each metric.
 
-## Journaling
+## 12. Journaling
 
 The SDK allows also to use a journaling function to log a series of entries. Each entry is composed of:
 - A date
@@ -331,10 +357,10 @@ The full journal (all entries) can be retrieved with [getJournal](com.quantactio
 
 As for the metrics an example journal can be retrieved for debug purposes with [getSampleJournal](com.quantactions.sdk.QA.getSampleJournal).
 
-## Questionnaires
+## 13. Questionnaires
 
 Both classic and custom questionnaires can be sub-ministered to users via the SDK.
 Get in touch [with us](mailto:development@quantactions.com) for more information about this feature.
 
-## Issue tracking and contact
+## 14. Issue tracking and contact
 Feel free to use the issue tracking of this repo to report any problem with the SDK, in case of more immediate assistance need feel free to contact us at [development@quantactions.com](mailto:development@quantactions.com)
