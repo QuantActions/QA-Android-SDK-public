@@ -59,7 +59,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.7.3'
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.8.0'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
