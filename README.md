@@ -1,5 +1,5 @@
 # QuantActions - Android SDK
-![version](https://img.shields.io/badge/version-0.8.0-blue)
+![version](https://img.shields.io/badge/version-0.9.0-blue)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
@@ -36,7 +36,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
    }
    
    dependencies {
-       coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+       coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
    }
    
     ```
@@ -59,7 +59,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.8.0'
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.0'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -227,7 +227,7 @@ android {
 }
 
 dependencies {
-   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
 }
 
 ```
@@ -295,27 +295,32 @@ After the integration of the SDK has been done, you can add some checks to make 
 Although we do not recommend it, the data collection can be paused/resumed via the methods offered by QA singleton
 [qa.pauseDataCollection(context)](com.quantactions.sdk.QA.pauseDataCollection) and [qa.resumeDataCollection(context)](com.quantactions.sdk.QA.resumeDataCollection)
 
-## 10. Metrics retrieval
+## 10. Metrics and Trends retrieval
 While the data collection and synchronization is automated within the SDK. Retrieval of metrics and insights
-has to be done manually within the app in order to access only the subset of metrics that the application needs.
+has to be done manually within the app in order to access only the subset of metrics and trends that the application needs.
 
-The metrics can be retrieve programmatically in the following way:
+The metrics and trends can be retrieve programmatically in the following way:
 
 ```kotlin
 qa.getMetric(Metric.SLEEP_SCORE)
+qa.getMetric(Trend.SLEEP_SCORE)
 qa.getMetric(Metric.COGNITIVE_FITNESS)
+qa.getMetric(Trend.COGNITIVE_FITNESS)
 ```
 
-Check [Metric](com.quantactions.sdk.Metric) for the list of metrics available in the current version of the SDK
+Check [Metric](com.quantactions.sdk.Metric) and [Trend](com.quantactions.sdk.Trends) for the list of
+metrics and trends available in the current version of the SDK
 
 The function returns an asynchronous [Kotlin Flow](https://kotlinlang.org/docs/flow.html) containing a
 [TimeSeries](com.quantactions.sdk.TimeSeries) object.
 The test app accompanying the SDK has some examples on how to handle the return data.
 
 Since the metrics for a user take from 2 to 7 days to be available (see [ETA](com.quantactions.sdk.Metric.eta)).
-Developer can have access to sample metrics (that update e very day) from a sampled device with [getMetricSample](com.quantactions.sdk.QA.getMetricSample)
+Developer can have access to sample metrics (that update every day) from a sampled device with [getMetricSample](com.quantactions.sdk.QA.getMetricSample)
 
-## 11. Metrics
+## 11. Metrics and Trends description
+
+### 11.1. Metrics
 
 The current version is shipped with the following metrics:
 
@@ -331,6 +336,29 @@ and a general confidence about the metric.
 This metric reports more information about the sleep of the user including bed time, wake up time
 and number and legth of interruptions. See also [SleepSummary](com.quantactions.sdk.data.model.SleepSummary)
 for more information on how this metric is organized.
+
+- [SCREEN_TIME_AGGREGATE](com.quantactions.sdk.Metric.SCREEN_TIME_AGGREGATE)
+- [ACTION_SPEED](com.quantactions.sdk.Metric.ACTION_SPEED)
+- [TYPING_SPEED](com.quantactions.sdk.Metric.TYPING_SPEED)
+- [SOCIAL_TAPS](com.quantactions.sdk.Metric.SOCIAL_TAPS)
+
+
+### 11.2. Trends
+
+The trends objects are TimeSeries that hold the daily values of the trend. For each day you get a
+short (2 weeks), medium (6 weeks) and long (1 year) trend.
+
+- [COGNITIVE_FITNESS](com.quantactions.sdk.Trend.COGNITIVE_FITNESS)
+- [ACTION_SPEED](com.quantactions.sdk.Trend.ACTION_SPEED)
+- [TYPING_SPEED](com.quantactions.sdk.Trend.TYPING_SPEED)
+- [SLEEP_SCORE](com.quantactions.sdk.Trend.SLEEP_SCORE)
+- [SLEEP_LENGTH](com.quantactions.sdk.Trend.SLEEP_LENGTH)
+- [SLEEP_INTERRUPTIONS](com.quantactions.sdk.Trend.SLEEP_INTERRUPTIONS)
+- [SOCIAL_ENGAGEMENT](com.quantactions.sdk.Trend.SOCIAL_ENGAGEMENT)
+- [SOCIAL_SCREEN_TIME](com.quantactions.sdk.Trend.SOCIAL_SCREEN_TIME)
+- [SOCIAL_TAPS](com.quantactions.sdk.Trend.SOCIAL_TAPS)
+- [THE_WAVE](com.quantactions.sdk.Trend.THE_WAVE)
+
 
 While the metrics have daily resolutions, the are updated every two hours.
 
