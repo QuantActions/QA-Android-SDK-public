@@ -1,5 +1,5 @@
-# QuantActions - Android SDK
-![version](https://img.shields.io/badge/version-0.9.0-blue)
+#Module QuantActions - Android SDK
+![version](https://img.shields.io/badge/version-0.9.1-blue)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
@@ -59,7 +59,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.0'
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.1'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -143,7 +143,7 @@ The data from multiple devices sharing the same `subscriptionId` will be merged 
 When subscribing the device using a general `cohortId`, get device gets automatically assigned a `subscriptionId`, to retrieve this id and use it to register other devices one case use the following code.
 
 ```kotlin
-qa.getParticipationId(applicationContext).collect {
+qa.getSubscriptionId(applicationContext).collect {
     when(it) {
         is QAResponse.QASuccessResponse -> {
            Timber.d(it.data!!.subscriptionId)
@@ -273,7 +273,7 @@ After the integration of the SDK has been done, you can add some checks to make 
 ```kotlin
     viewModelScope.launch {
         withContext(Dispatchers.Default) {
-            qa.getParticipationId(getApplication<Application>().applicationContext).collect {
+            qa.getSubscriptionId(getApplication<Application>().applicationContext).collect {
                 when(it) {
                     is QAResponse.QASuccessResponse -> Timber.d(it.data!!)
                     is QAResponse.QAErrorResponse -> {
@@ -308,7 +308,7 @@ qa.getMetric(Metric.COGNITIVE_FITNESS)
 qa.getMetric(Trend.COGNITIVE_FITNESS)
 ```
 
-Check [Metric](com.quantactions.sdk.Metric) and [Trend](com.quantactions.sdk.Trends) for the list of
+Check [Metrics](com.quantactions.sdk.Metric) and [Trends](com.quantactions.sdk.Trend) for the list of
 metrics and trends available in the current version of the SDK
 
 The function returns an asynchronous [Kotlin Flow](https://kotlinlang.org/docs/flow.html) containing a
@@ -324,23 +324,19 @@ Developer can have access to sample metrics (that update every day) from a sampl
 
 The current version is shipped with the following metrics:
 
-- [SLEEP_SCORE](com.quantactions.sdk.Metric.SLEEP_SCORE)
-- [COGNITIVE_FITNESS](com.quantactions.sdk.Metric.COGNITIVE_FITNESS)
-- [SOCIAL_ENGAGEMENT](com.quantactions.sdk.Metric.SOCIAL_ENGAGEMENT)
+- [SLEEP_SCORE](com.quantactions.sdk.Metric.SLEEP_SCORE), [COGNITIVE_FITNESS](com.quantactions.sdk.Metric.COGNITIVE_FITNESS), [SOCIAL_ENGAGEMENT](com.quantactions.sdk.Metric.SOCIAL_ENGAGEMENT):
+  Each of these metric has a value in the range 0-100 and is shipped with confidence intervals (high and low)
+  and a general confidence about the metric.
 
-Each of these metric has a value in the range 0-100 and is shipped with confidence intervals (high and low)
-and a general confidence about the metric.
+- [SLEEP_SUMMARY](com.quantactions.sdk.Metric.SLEEP_SUMMARY): This metric reports more information about the sleep of the user including bed time, wake up time
+  and number and length of interruptions. See also [SleepSummary](com.quantactions.sdk.data.model.SleepSummary)
+  for more information on how this metric is organized.
 
-- [SLEEP_SUMMARY](com.quantactions.sdk.Metric.SLEEP_SUMMARY)
+- [SCREEN_TIME_AGGREGATE](com.quantactions.sdk.Metric.SCREEN_TIME_AGGREGATE): This metric contains the total screen time as well as the screen time for social app, see also [ScreenTimeAggregate](com.quantactions.sdk.data.model.ScreenTimeAggregate)
 
-This metric reports more information about the sleep of the user including bed time, wake up time
-and number and legth of interruptions. See also [SleepSummary](com.quantactions.sdk.data.model.SleepSummary)
-for more information on how this metric is organized.
-
-- [SCREEN_TIME_AGGREGATE](com.quantactions.sdk.Metric.SCREEN_TIME_AGGREGATE)
-- [ACTION_SPEED](com.quantactions.sdk.Metric.ACTION_SPEED)
-- [TYPING_SPEED](com.quantactions.sdk.Metric.TYPING_SPEED)
-- [SOCIAL_TAPS](com.quantactions.sdk.Metric.SOCIAL_TAPS)
+- [ACTION_SPEED](com.quantactions.sdk.Metric.ACTION_SPEED): This metric is reported in milliseconds and refers to the amount of time it takes for the user to decide and complete a task on their smartphone.
+- [TYPING_SPEED](com.quantactions.sdk.Metric.TYPING_SPEED):This metric is reported in milliseconds and represents the time efficiency of the user in typing any kind of text on their smartphone.
+- [SOCIAL_TAPS](com.quantactions.sdk.Metric.SOCIAL_TAPS): This metrics report the number of taps on social apps.
 
 
 ### 11.2. Trends
@@ -359,8 +355,13 @@ short (2 weeks), medium (6 weeks) and long (1 year) trend.
 - [SOCIAL_TAPS](com.quantactions.sdk.Trend.SOCIAL_TAPS)
 - [THE_WAVE](com.quantactions.sdk.Trend.THE_WAVE)
 
+The [TrendHolder](com.quantactions.sdk.data.model.TrendHolder) contains 9 values. For each time
+resolution (short, medium, long) the trend has 3 values:
+- `differenceXYZ`: is the amount the metric has increased decrease (note: it is reported in the same unit as the metric)
+- `statisticXYZ`: is the p-value of the test done to check if the trend is significant (generally this can be safely ignored)
+- `significanceXYZ`: is the significance of the trend, +1 means metric has significantly increase, -1 means metric has significantly decreased, 0 means no significant change
 
-While the metrics have daily resolutions, the are updated every two hours.
+While the metrics and trends have daily resolutions, they are updated every two hours.
 
 In some cases the metrics for a day might be missing, in that case it means that there was not enough
 data collect for that day to give an estimate or that the confidence was too low to give an appropriate estimate.
@@ -387,8 +388,20 @@ As for the metrics an example journal can be retrieved for debug purposes with [
 
 ## 13. Questionnaires
 
-Both classic and custom questionnaires can be sub-ministered to users via the SDK.
+Both classic and custom questionnaires can be subministered to users via the SDK.
 Get in touch [with us](mailto:development@quantactions.com) for more information about this feature.
 
 ## 14. Issue tracking and contact
 Feel free to use the issue tracking of this repo to report any problem with the SDK, in case of more immediate assistance need feel free to contact us at [development@quantactions.com](mailto:development@quantactions.com)
+
+#Package com.quantactions.sdk
+The main functionality of the Quantactions Android SDK.
+
+#Package com.quantactions.sdk.data.entity
+Entities used across the SDK for particular functionalities.
+
+#Package com.quantactions.sdk.model
+Data models used across the SDK for particular functionalities.
+
+#Package com.quantactions.sdk.exceptions
+Exceptions that the SDK might be throwing.
