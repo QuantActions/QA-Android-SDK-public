@@ -1,4 +1,5 @@
-#Module QuantActions - Android SDK
+#Module SDK
+
 ![version](https://img.shields.io/badge/version-0.9.1-blue)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
@@ -394,6 +395,8 @@ Get in touch [with us](mailto:development@quantactions.com) for more information
 ## 14. Issue tracking and contact
 Feel free to use the issue tracking of this repo to report any problem with the SDK, in case of more immediate assistance need feel free to contact us at [development@quantactions.com](mailto:development@quantactions.com)
 
+---
+
 #Package com.quantactions.sdk
 The main functionality of the Quantactions Android SDK.
 
@@ -405,3 +408,6 @@ Data models used across the SDK for particular functionalities.
 
 #Package com.quantactions.sdk.exceptions
 Exceptions that the SDK might be throwing.
+
+
+
