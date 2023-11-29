@@ -60,7 +60,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.2
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.2'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
@@ -97,10 +97,11 @@ then you can access it in the code to initialize the SDK.
 
 ```kotlin
 qa.init(context,
-        apiKey=BuildConfig.QA_API_KEY, 
+        apiKey=BuildConfig.QA_API_KEY,
+        basicInfo=BasicInfo(
         age=1985, 
         gender=QA.Gender.UNKNOWN, 
-        selfDeclaredHealthy=true)
+        selfDeclaredHealthy=true))
 ```
 
 ------------------------
@@ -238,28 +239,33 @@ dependencies {
 ```kotlin
 package com.example.sdktestapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.quantactions.sdk.BasicInfo
 import com.quantactions.sdk.QA
-import com.example.sdktestapp.BuildConfig.QA_AUTH_KEY
-import com.example.sdktestapp.BuildConfig.QA_COHORT_ID
+import com.quantactions.sdktestapp.BuildConfig.QA_API_KEY
+import com.quantactions.sdktestapp.BuildConfig.QA_COHORT_ID
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mainViewModel: MainViewModel
-    private val calendar: Calendar = Calendar.getInstance(Locale.ENGLISH)
-    private lateinit var mainTextView: TextView;
-    
     @ExperimentalCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val qa = QA.getInstance(MainActivity.this)
-        qa.init(MainActivity.this, QA_API_KEY, 1985, QA.Gender.MALE, true) // initialize SDK
-        qa.requestOverlayPermission(MainActivity.this) // opens overlay settings page
-        qa.requestUsagePermission(MainActivity.this) // opens usage settings page
-        qa.subscribe(QA_COHORT_ID)  // register the device with the backend
-        qa.syncData() // optional: sync the data
+
+        // Get QA singleton
+        val qa = QA.getInstance(this@MainActivity)
+
+        lifecycleScope.launch {
+            qa.init(this@MainActivity, QA_API_KEY, BasicInfo(1985, QA.Gender.UNKNOWN, false)) // initialize SDK
+            qa.requestOverlayPermission(MainActivity.this) // opens overlay settings page
+            qa.requestUsagePermission(MainActivity.this) // opens usage settings page
+            qa.subscribe(QA_COHORT_ID)  // register the device with the backend
+            qa.syncData(this@MainActivity) // optional: sync the data
+        }
     }
 }
 ```
@@ -268,24 +274,17 @@ class MainActivity : AppCompatActivity() {
 
 ## 8. Checking that everything is running fine
 After the integration of the SDK has been done, you can add some checks to make sure everything is running fine.
-1. You can check that the SDK has been initialized correctly by using `qa.isInit(context)` (returns a bool)
+1. You can can check that device is registered with the backend by using `qa.isDeviceRegistered(context)` (returns a bool)
 2. You can check that the data collection is running fine by using `qa.isDataCollectionRunning(context)` (returns a bool)
-3. You can check that the device has been registered with the QA backend and/or the registration to a cohort was successful
+3. You can check that the registration to a cohort was successful
 ```kotlin
     viewModelScope.launch {
-        withContext(Dispatchers.Default) {
-            qa.getSubscriptionId(getApplication<Application>().applicationContext).collect {
-                when(it) {
-                    is QAResponse.QASuccessResponse -> Timber.d(it.data!!)
-                    is QAResponse.QAErrorResponse -> {
-                        if (it.message!!.contains("it is not part of any cohort")){
-                            Timber.d("Device is registered but not part of any cohort")
-                        } else {
-                           Timber.d("Device is NOT registered with QA backend")
-                        }
-                    }
-                    is QAResponse.QALoadingResponse -> Timber.d("Loading")
-                }
+        withContext(Dispatchers.IO) {
+            val subscription = qa.subscription()
+            if (subscription != null) {
+                Timber.d("Device is registered with cohort ${subscription.cohortId}")
+            } else {
+                Timber.d("Device is NOT registered with any cohort")
             }
         }
     }

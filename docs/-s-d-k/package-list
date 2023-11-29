@@ -151,6 +151,7 @@ $dokka.location:com.quantactions.sdk/QA/getMetricSampleAsync/#android.content.Co
 $dokka.location:com.quantactions.sdk/QA/getQuestionnairesList/#/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/get-questionnaires-list.html
 $dokka.location:com.quantactions.sdk/QA/init/#android.content.Context#kotlin.String#com.quantactions.sdk.BasicInfo/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/init.html
 $dokka.location:com.quantactions.sdk/QA/isDataCollectionRunning/#android.content.Context/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/is-data-collection-running.html
+$dokka.location:com.quantactions.sdk/QA/isDeviceRegistered/#/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/is-device-registered.html
 $dokka.location:com.quantactions.sdk/QA/journalEntries/#/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/journal-entries.html
 $dokka.location:com.quantactions.sdk/QA/journalEventKinds/#/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/journal-event-kinds.html
 $dokka.location:com.quantactions.sdk/QA/leaveCohort/#kotlin.String/PointingToDeclaration/-s-d-k/com.quantactions.sdk/-q-a/leave-cohort.html
