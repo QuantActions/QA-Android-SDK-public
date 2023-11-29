@@ -145,20 +145,11 @@ The data from multiple devices sharing the same `subscriptionId` will be merged 
 When subscribing the device using a general `cohortId`, get device gets automatically assigned a `subscriptionId`, to retrieve this id and use it to register other devices one case use the following code.
 
 ```kotlin
-qa.getSubscriptionId(applicationContext).collect {
-    when(it) {
-        is QAResponse.QASuccessResponse -> {
-           Timber.d(it.data!!.subscriptionId)
-        }
-        is QAResponse.QAErrorResponse -> {
-            if (it.message!!.contains("it is not part of any cohort")){
-                Timber.d("Device is registered but not part of any cohort")
-            } else {
-               Timber.d("Device is NOT registered with QA backend")
-            }
-        }
-        is QAResponse.QALoadingResponse -> Timber.d("Loading")
-    }
+val subscription = qa.subscription()
+if (subscription != null) {
+    Timber.d("Device is registered with cohort ${subscription.cohortId}")
+} else {
+    Timber.d("Device is NOT registered with any cohort")
 }
 ```
 
