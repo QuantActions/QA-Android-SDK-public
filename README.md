@@ -1,6 +1,6 @@
 #Module SDK
 
-![version](https://img.shields.io/badge/version-0.9.3-blue)
+![version](https://img.shields.io/badge/version-0.9.4-blue)
 
 The QuantActions SDK for Android enables a developer to add all the QuantActions functionalities to an android app. This includes:
 
@@ -60,7 +60,7 @@ The SDK is distributed via [JitPack](https://jitpack.io/), for now the SDK is pr
 3. Add the QA SDK dependency to your app-level `build.gradle` file
 
     ```groovy
-    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.3'
+    implementation 'com.github.QuantActions:QA-Android-SDK:0.9.4'
     ```
 
    and re-sync the project. Remember to check the latest SDK version in case you are reading an old version of the documentation.
